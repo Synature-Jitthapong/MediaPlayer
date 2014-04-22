@@ -54,19 +54,19 @@ public class VideoPlayer implements OnCompletionListener, OnPreparedListener,
     private void startVideoPlayback() {
 		Log.v(TAG, "startVideoPlayback");
 		
-		float boxWidth = mSurfaceView.getWidth();
-		float boxHeight = mSurfaceView.getHeight();
-		float videoWidth = mVideoWidth;
-		float videoHeight = mVideoHeight;
-		
-		float widthRatio = boxWidth / videoWidth;
-		float heightRatio = boxHeight / videoHeight;
-		float aspectRatio = videoWidth / videoHeight;
-
-		if (widthRatio > heightRatio)
-			mVideoWidth = (int) (boxHeight * aspectRatio);
-		else
-			mVideoHeight = (int) (boxWidth / aspectRatio);
+//		float boxWidth = mSurfaceView.getWidth();
+//		float boxHeight = mSurfaceView.getHeight();
+//		float videoWidth = mVideoWidth;
+//		float videoHeight = mVideoHeight;
+//		
+//		float widthRatio = boxWidth / videoWidth;
+//		float heightRatio = boxHeight / videoHeight;
+//		float aspectRatio = videoWidth / videoHeight;
+//
+//		if (widthRatio > heightRatio)
+//			mVideoWidth = (int) (boxHeight * aspectRatio);
+//		else
+//			mVideoHeight = (int) (boxWidth / aspectRatio);
 
 		mSurfaceHolder.setFixedSize(mVideoWidth, mVideoHeight);
 		mMediaPlayer.start();
