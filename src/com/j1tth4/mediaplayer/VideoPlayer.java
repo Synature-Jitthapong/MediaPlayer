@@ -18,13 +18,18 @@ public class VideoPlayer implements OnCompletionListener, OnPreparedListener,
 		OnVideoSizeChangedListener, SurfaceHolder.Callback{
 	
 	private static final String TAG = "MyMediaPlayer";
+	
 	private MediaManager mMediaManager;
+	
 	private ArrayList<HashMap<String, String>> mPlayLst;
+	
 	private int mVideoWidth;
 	private int mVideoHeight;
+	private boolean mIsPause = false;
 	private boolean mIsVideoSizeKnown = false;
 	private boolean mIsVideoReadyToBePlayed = false;
 	private int mCurrMediaIndex = -1;
+	
 	private SurfaceView mSurfaceView;
 	private SurfaceHolder mSurfaceHolder;
 	private MediaPlayer mMediaPlayer;
@@ -107,10 +112,12 @@ public class VideoPlayer implements OnCompletionListener, OnPreparedListener,
 	
 	public void resume(){
 		mMediaPlayer.start();
+		mIsPause = false;
 	}
 	
 	public void pause(){
 		mMediaPlayer.pause();
+		mIsPause = true;
 	}
 	
 	private void playMedia(){
@@ -184,6 +191,10 @@ public class VideoPlayer implements OnCompletionListener, OnPreparedListener,
 		public void onError(Exception e);
 	}
 
+	public boolean isPause(){
+		return mIsPause;
+	}
+	
 	@Override
 	public void onVideoSizeChanged(android.media.MediaPlayer mp, int width,
 			int height) {
