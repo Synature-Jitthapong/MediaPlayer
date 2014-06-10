@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.j1tth4.mobile.util.MediaManager;
+import com.synature.util.MediaManager;
 
 import android.content.Context;
 import android.media.MediaPlayer;
